@@ -19,6 +19,7 @@
 ;; Customizations for different modules
 (load-customization-file "look-and-feel.el")
 (load-customization-file "color-theme-init.el")
+(load-customization-file "magit-init.el")
 
 ;; Platform-dependent 
 (setq os-init-file 

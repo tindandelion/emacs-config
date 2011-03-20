@@ -1,0 +1,3 @@
+[submodule "third-party/github/magit"]
+	path = third-party/github/magit
+	url = git://github.com/philjackson/magit.git
