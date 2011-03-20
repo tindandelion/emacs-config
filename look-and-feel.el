@@ -21,3 +21,5 @@
 (require 'ido)
 (ido-mode t)
 
+;; Turn on cua mode
+(cua-mode t)
