@@ -21,6 +21,7 @@
 (load-customization-file "color-theme-init.el")
 (load-customization-file "magit-init.el")
 (load-customization-file "tab-completion.el")
+(load-customization-file "ruby-mode-init.el")
 
 ;; Platform-dependent 
 (setq os-init-file 
