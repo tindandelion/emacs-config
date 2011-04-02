@@ -23,6 +23,7 @@
 (load-customization-file "tab-completion.el")
 (load-customization-file "ruby-mode-init.el")
 (load-customization-file "text-mode-init.el")
+
 ;; Platform-dependent 
 (setq os-init-file 
       (cond ((eq window-system 'mac) "carbon-mac-init.el")
@@ -32,7 +33,5 @@
 
 (if os-init-file
   (load-file (concat dotfiles-dir os-init-file)))
-
-
 
 (put 'erase-buffer 'disabled nil)
