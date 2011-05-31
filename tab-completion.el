@@ -17,3 +17,4 @@ point."
 (add-hook 'emacs-lisp-mode-hook 'tab-indent-or-expand)
 (add-hook 'ruby-mode-hook       'tab-indent-or-expand)
 (add-hook 'js-mode-hook         'tab-indent-or-expand)
+(add-hook 'python-mode-hook     'tab-indent-or-expand)
