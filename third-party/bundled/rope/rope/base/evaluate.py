@@ -199,10 +199,8 @@ class StatementEvaluator(object):
             self._get_object_for_node(node.left))
 
     def _BoolOp(self, node):
-        pyobject = self._get_object_for_node(node.values[0])
-        if pyobject is None:
-            pyobject = self._get_object_for_node(node.values[1])
-        self.result = rope.base.pynames.UnboundName(pyobject)
+        self.result = rope.base.pynames.UnboundName(
+            self._get_object_for_node(node.values[0]))
 
     def _Repr(self, node):
         self.result = self._get_builtin_name('str')
@@ -294,15 +292,13 @@ class StatementEvaluator(object):
         else:
             return
         if function_name in pyobject:
-            called = pyobject[function_name].get_object()
-            if not called or not isinstance(called, pyobjects.AbstractFunction):
-                return
+            call_function = pyobject[function_name].get_object()
             args = [node]
             if other_args:
                 args += other_args
             arguments_ = arguments.Arguments(args, self.scope)
             self.result = rope.base.pynames.UnboundName(
-                pyobject=called.get_returned_object(arguments_))
+                pyobject=call_function.get_returned_object(arguments_))
 
     def _Lambda(self, node):
         self.result = rope.base.pynames.UnboundName(

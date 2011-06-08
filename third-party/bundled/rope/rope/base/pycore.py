@@ -318,8 +318,6 @@ class _ModuleCache(object):
         else:
             result = PyModule(self.pycore, resource=resource,
                               force_errors=force_errors)
-            if result.has_errors:
-                return result
         self.module_map[resource] = result
         self.observer.add_resource(resource)
         return result

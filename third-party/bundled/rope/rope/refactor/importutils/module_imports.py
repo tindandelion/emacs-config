@@ -428,8 +428,7 @@ class _GlobalImportFinder(object):
         if node.level:
             level = node.level
         import_info = importinfo.FromImport(
-            node.module or '', # see comment at rope.base.ast.walk
-            level, self._get_names(node.names))
+            node.module, level, self._get_names(node.names))
         start_line = node.lineno
         self.imports.append(importinfo.ImportStatement(
                             import_info, node.lineno, end_line,

@@ -921,5 +921,4 @@ if __name__ == '__main__':
         unittest.main()
     else:
         runner = unittest.TextTestRunner()
-        result = runner.run(suite())
-        sys.exit(not result.wasSuccessful())
+        runner.run(suite())
