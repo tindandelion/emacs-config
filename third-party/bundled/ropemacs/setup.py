@@ -1,9 +1,4 @@
-extra_kwargs = {}
-try:
-    from setuptools import setup
-    extra_kwargs['install_requires'] = ['rope >= 0.9.3', 'ropemode']
-except ImportError:
-    from distutils.core import setup
+from distutils.core import setup
 
 
 classifiers=[
@@ -28,11 +23,9 @@ setup(name='ropemacs',
       version='0.6',
       description='An emacs mode for using rope python refactoring library',
       long_description=get_long_description(),
-      packages=['ropemacs'],
+      packages=['ropemode', 'ropemacs'],
       author='Ali Gholami Rudi',
       author_email='aligrudi@users.sourceforge.net',
       url='http://rope.sf.net/ropemacs.html',
       license='GNU GPL',
-      classifiers=classifiers,
-      requires=['ropemode'],
-      **extra_kwargs)
+      classifiers=classifiers)

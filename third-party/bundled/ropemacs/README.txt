@@ -33,15 +33,6 @@ After installing pymacs, add these lines to your ``~/.emacs`` file::
 Note that rope and ropemacs should be in your ``PYTHONPATH`` for this
 to work.
 
-Also note that ropemacs may redefine some standard Emacs and your custom key
-bindings.  To prevent this, put the following example lines to your
-``~/.emacs`` *before* the lines presented above:
-
-  (setq ropemacs-enable-shortcuts nil)
-  (setq ropemacs-local-prefix "C-c C-p")
-
-See keybinding_ and variables_ sections for more details.
-
 Loading Lazily
 --------------
 
@@ -170,10 +161,6 @@ M-?           xaa
 C-u 1 M-/     xab
 C-u 3 M-/     xbb
 ============  ==========  =======================
-
-Note that minibuffer completions are shown by pressing tab key at the
-completion prompt.  Also you can use ``rope-completions`` lisp function
-to get the list of completions.
 
 
 Finding Occurrences
@@ -317,6 +304,13 @@ Variables
   open the project that contains the file on which a rope command is
   performed when no project is already opened.
 
+* ``ropemacs-local-prefix``: The prefix for ropemacs refactorings.
+  Defaults to ``C-c r``.
+* ``ropemacs-global-prefix``: The prefix for ropemacs project commands
+  Defaults to ``C-x p``.
+* ``ropemacs-enable-shortcuts``: Shows whether to bind ropemacs
+  shortcuts keys.  Defaults to ``t``.
+
 * ``ropemacs-enable-autoimport``: Shows whether to enable autoimport.
   Defaults to ``nil``.
 * ``ropemacs-autoimport-modules``: The name of modules whose global
@@ -324,16 +318,6 @@ Variables
   this list and fills its cache.
 * ``ropemacs-autoimport-underlineds``: If set, autoimport will cache
   names starting with underlines, too.
-
-These variables change the keybinding.  They should be set before
-loading ropemacs.
-
-* ``ropemacs-local-prefix``: The prefix for ropemacs refactorings.
-  Defaults to ``C-c r``.
-* ``ropemacs-global-prefix``: The prefix for ropemacs project commands
-  Defaults to ``C-x p``.
-* ``ropemacs-enable-shortcuts``: Shows whether to bind ropemacs
-  shortcuts keys.  Defaults to ``t``.
 
 
 Keybinding
@@ -349,7 +333,7 @@ Key               Command
 C-x p o           rope-open-project
 C-x p k           rope-close-project
 C-x p f           rope-find-file
-C-x p 4 f         rope-find-file-other-window
+C-x p 4 f         rope-find-file-other_window
 C-x p u           rope-undo
 C-x p r           rope-redo
 C-x p c           rope-project-config
@@ -394,7 +378,8 @@ code-assist group.  You can define your own shortcuts like this::
 
   (define-key ropemacs-local-keymap "\C-cg" 'rope-goto-definition)
 
-Ropemacs itself comes with a few shortcuts:
+Ropemacs itself comes with a few shortcuts.  These shortcuts will be
+used only when ropemacs-enable-shortcuts is non-nil.
 
 ================  ============================
 Key               Command
@@ -405,13 +390,6 @@ C-c g             rope-goto-definition
 C-c d             rope-show-doc
 C-c f             rope-find-occurrences
 ================  ============================
-
-These shortcuts will be used only when ropemacs-enable-shortcuts is
-non-nil (it is enabled by default).  Note that in order to disable these
-shortcuts, the value of ropemacs-enable-shortcuts should be set *before*
-loading ropemacs::
-
-  (setq ropemacs-enable-shortcuts 'nil)
 
 
 Contributing

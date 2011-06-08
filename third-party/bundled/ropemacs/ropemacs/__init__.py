@@ -1,6 +1,4 @@
 """ropemacs, an emacs mode for using rope refactoring library"""
-import sys
-
 import ropemode.decorators
 import ropemode.environment
 import ropemode.interface
@@ -206,29 +204,7 @@ class LispUtils(ropemode.environment.Environment):
         return lisp.current_word()
 
     def push_mark(self):
-        marker_ring = self.get('marker_ring')
-        marker = lisp.point_marker()
-        lisp.ring_insert(marker_ring, marker)
-
-    def pop_mark(self):
-        marker_ring = self.get('marker_ring')
-        if lisp.ring_empty_p(marker_ring):
-            self.message("There are no more marked buffers in \
-the rope-marker-ring")
-        else:
-            oldbuf = lisp.current_buffer()
-            marker = lisp.ring_remove(marker_ring, 0)
-            marker_buffer = lisp.marker_buffer(marker)
-            if marker_buffer is None:
-                lisp.message("The marked buffer has been deleted")
-                return
-            marker_point  = lisp.marker_position(marker)
-            lisp.set_buffer(marker_buffer)
-            lisp.goto_char(marker_point)
-            #Kill that marker so it doesn't slow down editing.
-            lisp.set_marker(marker, None, None)
-            if not lisp.eq(oldbuf, marker_buffer):
-                lisp.switch_to_buffer(marker_buffer)
+        lisp.push_mark()
 
     def prefix_value(self, prefix):
         return lisp.prefix_numeric_value(prefix)
@@ -445,12 +421,6 @@ Use nil to prevent binding keys.")
 
 Use nil to prevent binding keys.")
 
-(defcustom ropemacs-marker-ring-length 16
-  "Length of the rope marker ring.")
-
-(defcustom ropemacs-marker-ring (make-ring ropemacs-marker-ring-length)
-  "Ring of markers which are locations from which goto-definition was invoked.")
-
 (defcustom ropemacs-enable-shortcuts 't
   "Shows whether to bind ropemacs shortcuts keys.
 
@@ -461,7 +431,6 @@ Key               Command
 ================  ============================
 M-/               rope-code-assist
 C-c g             rope-goto-definition
-C-c u             rope-pop-mark
 C-c d             rope-show-doc
 C-c f             rope-find-occurrences
 M-?               rope-lucky-assist
@@ -476,7 +445,6 @@ M-?               rope-lucky-assist
                     ["Code assist" rope-code-assist t]
                     ["Lucky assist" rope-lucky-assist t]
                     ["Goto definition" rope-goto-definition t]
-                    ["Pop mark" rope-pop-mark t]
                     ["Jump to global" rope-jump-to-global t]
                     ["Show documentation" rope-show-doc t]
                     ["Find Occurrences" rope-find-occurrences t]
@@ -541,36 +509,17 @@ MINOR_MODE = """\
 shortcuts = [('M-/', 'rope-code-assist'),
              ('M-?', 'rope-lucky-assist'),
              ('C-c g', 'rope-goto-definition'),
-             ('C-c u', 'rope-pop-mark'),
              ('C-c d', 'rope-show-doc'),
              ('C-c f', 'rope-find-occurrences')]
 
 
-_interface = None
+ropemode.decorators.logger.message = message
+lisp(DEFVARS)
+_interface = ropemode.interface.RopeMode(env=LispUtils())
+_interface.init()
+lisp(MINOR_MODE)
 
-def _load_ropemacs():
-    global _interface
-    ropemode.decorators.logger.message = message
-    lisp(DEFVARS)
-    _interface = ropemode.interface.RopeMode(env=LispUtils())
-    _interface.init()
-    lisp(MINOR_MODE)
+for key, command in shortcuts:
+    LispUtils()._bind_local(command, key)
 
-    if LispUtils().get('enable_shortcuts'):
-        for key, command in shortcuts:
-            LispUtils()._bind_local(command, key)
-
-    lisp.add_hook(lisp['python-mode-hook'], lisp['ropemacs-mode'])
-
-def _started_from_pymacs():
-    import inspect
-    frame = sys._getframe()
-    while frame:
-        # checking frame.f_code.co_name == 'pymacs_load_helper' might
-        # be very fragile.
-        if inspect.getfile(frame).rstrip('c').endswith('pymacs.py'):
-            return True
-        frame = frame.f_back
-
-if _started_from_pymacs():
-    _load_ropemacs()
+lisp.add_hook(lisp['python-mode-hook'], lisp['ropemacs-mode'])
