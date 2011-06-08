@@ -16,6 +16,8 @@
 (defun load-customization-file (filename)
   (load-file (concat dotfiles-dir filename)))
 
+(add-third-party-dir "bundled")
+
 ;; Customizations for different modules
 (load-customization-file "look-and-feel.el")
 (load-customization-file "color-theme-init.el")

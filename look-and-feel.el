@@ -29,6 +29,5 @@
 (cua-mode t)
 
 ;; Turn on autopair mode
-(add-third-party-dir "bundled/autopair")
 (require 'autopair)
 (autopair-global-mode)
