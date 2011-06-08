@@ -1,11 +1,11 @@
 (add-third-party-dir "bundled/pymacs")
+(require 'pymacs)
 
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
+(add-to-list 'pymacs-load-path (third-party-dir "bundled/rope/rope"))
+(add-to-list 'pymacs-load-path (third-party-dir "bundled/ropemacs/ropemacs"))
+; (pymacs-load "ropemacs" "rope-")
 
-(eval-after-load "pymacs"
-  '(add-to-list 'pymacs-load-path (third-party-dir "bundled/rope/rope")))
+
+
+
 
