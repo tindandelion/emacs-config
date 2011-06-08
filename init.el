@@ -22,6 +22,7 @@
 (load-customization-file "magit-init.el")
 (load-customization-file "tab-completion.el")
 (load-customization-file "ruby-mode-init.el")
+(load-customization-file "python-mode-init.el")
 (load-customization-file "text-mode-init.el")
 (load-customization-file "org-mode-init.el")
 ;; Platform-dependent 
