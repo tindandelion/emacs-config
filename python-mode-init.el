@@ -6,7 +6,8 @@
 ;(add-to-list 'pymacs-load-path (third-party-dir "bundled/ropemode"))
 ;(pymacs-load "ropemacs" "rope-")
 
-
-
+(add-hook 'python-mode-hook
+	  '(lambda ()
+	     (define-key python-mode-map "\C-m" 'newline-and-indent)))
 
 
