@@ -1,6 +1,13 @@
 (require 'auto-complete)
 (global-auto-complete-mode t)
 
+(setq ac-auto-start nil)
+(global-set-key "\t" 'ac-start)
+
+(setq ac-dwim t)
+
+(define-key ac-complete-mode-map "\C-m" 'ac-complete)
+
 (defface ac-yasnippet-candidate-face
   '((t (:background "sandybrown" :foreground "black")))
   "Face for yasnippet candidate.")
