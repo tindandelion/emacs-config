@@ -23,7 +23,8 @@
 
 (add-third-party-dir "bundled")
 
-;; Customizations for different modules
+;; Customizations for different module
+(load-library "yasnippet-init")
 (load-library "look-and-feel")
 (load-library "color-theme-init")
 (load-library "magit-init")
@@ -33,7 +34,7 @@
 (load-library "text-mode-init")
 (load-library "org-mode-init")
 (load-library "winmove-init")
-(load-library "yasnippet-init")
+
 
 ;; Platform-dependent 
 (setq os-init-file 
