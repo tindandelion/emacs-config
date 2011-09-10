@@ -28,6 +28,7 @@
 (load-library "python-mode-init")
 (load-library "text-mode-init")
 (load-library "org-mode-init")
+(load-library "winmove-init")
 ;; Platform-dependent 
 (setq os-init-file 
       (cond ((eq window-system 'mac) "carbon-mac-init")
