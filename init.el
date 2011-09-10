@@ -17,6 +17,10 @@
     (add-to-list 'load-path dir)
     dir))
 
+(defun add-bundled-library-dir (library-dir)
+  (add-third-party-dir 
+   (concat (file-name-as-directory "bundled") library-dir)))
+
 (add-third-party-dir "bundled")
 
 ;; Customizations for different modules
@@ -29,6 +33,8 @@
 (load-library "text-mode-init")
 (load-library "org-mode-init")
 (load-library "winmove-init")
+(load-library "yasnippet-init")
+
 ;; Platform-dependent 
 (setq os-init-file 
       (cond ((eq window-system 'mac) "carbon-mac-init")
