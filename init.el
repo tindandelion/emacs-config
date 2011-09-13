@@ -34,7 +34,7 @@
 (load-library "text-mode-init")
 (load-library "org-mode-init")
 (load-library "winmove-init")
-
+(load-library "pymacs-init")
 
 ;; Platform-dependent 
 (setq os-init-file 
