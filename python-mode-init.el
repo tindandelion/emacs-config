@@ -1,10 +1,9 @@
-(add-third-party-dir "bundled/pymacs")
-;(require 'pymacs)
+(defun load-ropemacs ()
+  (interactive)
+  (require 'pymacs)
+  (pymacs-load "ropemacs" "rope-")
+  (setq ropemacs-confirm-saving 'nil))
 
-;(add-to-list 'pymacs-load-path (third-party-dir "bundled/rope"))
-;(add-to-list 'pymacs-load-path (third-party-dir "bundled/ropemacs"))
-;(add-to-list 'pymacs-load-path (third-party-dir "bundled/ropemode"))
-;(pymacs-load "ropemacs" "rope-")
 
 (defun install-keybindings ()
   (define-key python-mode-map "\C-m" 'newline-and-indent))
