@@ -30,11 +30,12 @@
 (load-library "magit-init")
 (load-library "auto-completion-init")
 (load-library "ruby-mode-init")
+(load-library "pymacs-init")
 (load-library "python-mode-init")
 (load-library "text-mode-init")
 (load-library "org-mode-init")
 (load-library "winmove-init")
-(load-library "pymacs-init")
+
 
 ;; Platform-dependent 
 (setq os-init-file 

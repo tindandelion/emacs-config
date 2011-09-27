@@ -4,7 +4,6 @@
   (pymacs-load "ropemacs" "rope-")
   (setq ropemacs-confirm-saving 'nil))
 
-
 (defun install-keybindings ()
   (define-key python-mode-map "\C-m" 'newline-and-indent))
 
@@ -25,10 +24,12 @@
     (add-to-list 'flymake-allowed-file-name-masks 
 		 '("\\.py\\'" flymake-pyflakes-init))))
 
+(eval-after-load 'python '(load-ropemacs))
 (add-hook 'python-mode-hook
 	  '(lambda ()
 	     (enable-pyflakes)
 	     (flymake-mode t)
+	     (ropemacs-mode t)
 	     (install-keybindings)))
 
 
