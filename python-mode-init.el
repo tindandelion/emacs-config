@@ -9,14 +9,18 @@
   (define-key python-mode-map "\t" 'yas/expand)
   (setq yas/fallback-behavior '(apply tab-completion-after-yasnippet)))
 
-
 (defun flymake-create-temp-in-system-tempdir (filename prefix)
   (make-temp-file (or prefix "flymake")))
 
+(defun at-end-of-word ()
+  (and (or (bobp) (= ?w (char-syntax (char-before))))
+       (or (eobp) (not (= ?w (char-syntax (char-after)))))))
+
 (defun tab-completion-after-yasnippet ()
   (interactive)
-  (message "We are after yasnippet!")
-  (indent-for-tab-command))
+  (if (at-end-of-word)
+      (ac-start)
+    (indent-for-tab-command)))
 
 (defun enable-pyflakes ()
   (when (load "flymake" t) 
@@ -32,10 +36,10 @@
     (add-to-list 'flymake-allowed-file-name-masks 
 		 '("\\.py\\'" flymake-pyflakes-init))))
 
-;;(eval-after-load 'python '(load-ropemacs))
+(eval-after-load 'python '(load-ropemacs))
 (add-hook 'python-mode-hook
 	  '(lambda ()
-	     ;; (enable-pyflakes)
-	     ;; (flymake-mode t)
-	     ;; (ropemacs-mode t)
+	     (enable-pyflakes)
+	     (flymake-mode t)
+	     (ropemacs-mode t)
 	     (install-keybindings)))
