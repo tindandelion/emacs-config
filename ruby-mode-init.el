@@ -10,9 +10,16 @@
   (define-key ruby-mode-map "\C-\M-j" 'insert-new-line)
   (define-key ruby-mode-map "\M-\r" 'insert-new-line))
 
+(defun enable-electric ()
+  (require 'ruby-electric)
+  (ruby-electric-mode t))
+
 (defun customize-ruby-mode ()
   (ruby-mode-keys)
-  (inf-ruby-keys))
+  (inf-ruby-keys)
+  (setq show-trailing-whitespace nil)
+  (setq autopair-dont-activate t)
+  (enable-electric))
 
 (add-hook 'ruby-mode-hook 'customize-ruby-mode)
 
