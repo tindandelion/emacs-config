@@ -14,14 +14,14 @@
   (require 'ruby-electric)
   (ruby-electric-mode t))
 
-(defun customize-ruby-mode ()
-  (ruby-mode-keys)
-  (inf-ruby-keys)
-  (setq show-trailing-whitespace nil)
-  (setq autopair-dont-activate t)
-  (enable-electric))
-
-(add-hook 'ruby-mode-hook 'customize-ruby-mode)
+(add-hook 'ruby-mode-hook 
+	  '(lambda ()
+	     (ruby-mode-keys)
+	     (inf-ruby-keys)
+	     (setq show-trailing-whitespace nil)
+	     (setq autopair-dont-activate t)
+	     (intelligent-tab-for-mode ruby-mode-map)
+	     (enable-electric)))
 
 
 

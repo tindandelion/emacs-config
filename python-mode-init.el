@@ -4,23 +4,11 @@
   (pymacs-load "ropemacs" "rope-")
   (setq ropemacs-confirm-saving 'nil))
 
-(defun install-keybindings ()
-  (define-key python-mode-map "\C-m" 'newline-and-indent)
-  (define-key python-mode-map "\t" 'yas/expand)
-  (setq yas/fallback-behavior '(apply tab-completion-after-yasnippet)))
+(defun indent-for-newline ()
+  (define-key python-mode-map "\C-m" 'newline-and-indent))
 
 (defun flymake-create-temp-in-system-tempdir (filename prefix)
   (make-temp-file (or prefix "flymake")))
-
-(defun at-end-of-word ()
-  (and (or (bobp) (= ?w (char-syntax (char-before))))
-       (or (eobp) (not (= ?w (char-syntax (char-after)))))))
-
-(defun tab-completion-after-yasnippet ()
-  (interactive)
-  (if (at-end-of-word)
-      (ac-start)
-    (indent-for-tab-command)))
 
 (defun enable-pyflakes ()
   (when (load "flymake" t) 
@@ -42,4 +30,5 @@
 	     (enable-pyflakes)
 	     (flymake-mode t)
 	     (ropemacs-mode t)
-	     (install-keybindings)))
+	     (intelligent-tab-for-mode python-mode-map)
+	     (indent-for-newline)))
