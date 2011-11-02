@@ -1,4 +1,5 @@
-(add-third-party-dir "bundled/ruby-mode")
+(add-bundled-library-dir "ruby-mode")
+(add-github-library-dir "rvm")
 
 (autoload 'run-ruby "inf-ruby"
   "Run inferior Ruby interpreter")
@@ -14,6 +15,10 @@
   (require 'ruby-electric)
   (ruby-electric-mode t))
 
+(defun activate-rvm ()
+  (require 'rvm)
+  (rvm-activate-corresponding-ruby))
+
 (add-hook 'ruby-mode-hook 
 	  '(lambda ()
 	     (ruby-mode-keys)
@@ -21,7 +26,8 @@
 	     (setq show-trailing-whitespace nil)
 	     (setq autopair-dont-activate t)
 	     (intelligent-tab-for-mode ruby-mode-map)
-	     (enable-electric)))
+	     (enable-electric)
+	     (activate-rvm)))
 
 
 

@@ -21,6 +21,10 @@
   (add-third-party-dir 
    (concat (file-name-as-directory "bundled") library-dir)))
 
+(defun add-github-library-dir (library-dir)
+  (add-third-party-dir 
+   (concat (file-name-as-directory "github") library-dir)))
+
 (add-third-party-dir "bundled")
 
 ;; Customizations for different module
