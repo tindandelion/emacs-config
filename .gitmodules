@@ -7,3 +7,6 @@
 [submodule "third-party/github/rvm"]
 	path = third-party/github/rvm
 	url = https://github.com/senny/rvm.el.git
+[submodule "third-party/github/smex"]
+	path = third-party/github/smex
+	url = git://github.com/nonsequitur/smex.git
