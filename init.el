@@ -41,6 +41,7 @@
 (load-library "org-mode-init")
 (load-library "winmove-init")
 (load-library "smex-init")
+(load-library "cucumber-init")
 
 ;; Platform-dependent 
 (setq os-init-file 
