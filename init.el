@@ -42,7 +42,7 @@
 (load-library "winmove-init")
 (load-library "smex-init")
 (load-library "cucumber-init")
-
+(load-library "expand-region-init")
 ;; Platform-dependent 
 (setq os-init-file 
       (cond ((eq window-system 'mac) "carbon-mac-init")

@@ -1,4 +1,4 @@
-(add-third-party-dir "github/magit")
+(add-github-library-dir "magit")
 (require 'magit)
 
 (global-set-key "\C-xg" 'magit-status)
