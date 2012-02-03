@@ -28,9 +28,9 @@
 (add-third-party-dir "bundled")
 
 ;; Customizations for different module
+(load-library "look-and-feel")
 (load-library "intelligent-tab")
 (load-library "yasnippet-init")
-(load-library "look-and-feel")
 (load-library "color-theme-init")
 (load-library "magit-init")
 (load-library "auto-completion-init")
