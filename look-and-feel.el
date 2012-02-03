@@ -31,3 +31,6 @@
 ;; Turn on autopair mode
 (require 'autopair)
 (autopair-global-mode)
+
+;; Global shortcuts
+(global-set-key [M-delete] 'undo)
