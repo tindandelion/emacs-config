@@ -16,3 +16,6 @@
 [submodule "third-party/github/expand-region"]
 	path = third-party/github/expand-region
 	url = git://github.com/magnars/expand-region.el.git
+[submodule "third-party/github/markdown"]
+	path = third-party/github/markdown
+	url = git://jblevins.org/git/markdown-mode.git

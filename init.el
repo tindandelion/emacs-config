@@ -43,6 +43,7 @@
 (load-library "smex-init")
 (load-library "cucumber-init")
 (load-library "expand-region-init")
+(load-library "markdown-init")
 ;; Platform-dependent 
 (setq os-init-file 
       (cond ((eq window-system 'mac) "carbon-mac-init")
