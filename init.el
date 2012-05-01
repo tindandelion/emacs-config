@@ -44,6 +44,7 @@
 (load-library "cucumber-init")
 (load-library "expand-region-init")
 (load-library "markdown-init")
+(load-library "coffee-mode-init")
 ;; Platform-dependent 
 (setq os-init-file 
       (cond ((eq window-system 'mac) "carbon-mac-init")
