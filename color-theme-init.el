@@ -6,18 +6,21 @@
   (require 'color-theme-zenburn)
   (color-theme-zenburn))
 
-(defun init-deepblue-theme ()
+(defun init-standard-color-theme (theme)
   (require 'color-theme)
   (color-theme-initialize)
-  (color-theme-deep-blue))
+  (apply theme '()))
 
 (defun init-solarized-theme ()
   (add-github-library-dir "color-theme-solarized")
   (require 'color-theme)
   (require 'color-theme-solarized)
-  (color-theme-initialize)
   (color-theme-solarized-light)) 
 
-(init-solarized-theme)
+(defun init-tomorrow-theme ()
+  (add-github-library-dir "color-theme-tomorrow/GNU Emacs")
+  (require 'color-theme)
+  (require 'color-theme-tomorrow)
+  (color-theme-tomorrow))
 
-
+(init-standard-color-theme 'color-theme-deep-blue)
