@@ -11,6 +11,13 @@
   (color-theme-initialize)
   (color-theme-deep-blue))
 
-(init-zenburn-theme)
+(defun init-solarized-theme ()
+  (add-github-library-dir "color-theme-solarized")
+  (require 'color-theme)
+  (require 'color-theme-solarized)
+  (color-theme-initialize)
+  (color-theme-solarized-light)) 
+
+(init-solarized-theme)
 
 
