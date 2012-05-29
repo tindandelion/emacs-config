@@ -15,7 +15,7 @@
   (add-github-library-dir "color-theme-solarized")
   (require 'color-theme)
   (require 'color-theme-solarized)
-  (color-theme-solarized-light)) 
+  (color-theme-solarized-dark)) 
 
 (defun init-tomorrow-theme ()
   (add-github-library-dir "color-theme-tomorrow/GNU Emacs")
@@ -23,4 +23,4 @@
   (require 'color-theme-tomorrow)
   (color-theme-tomorrow))
 
-(init-standard-color-theme 'color-theme-deep-blue)
+(init-standard-color-theme 'color-theme-charcoal-black)
