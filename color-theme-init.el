@@ -23,4 +23,5 @@
   (require 'color-theme-tomorrow)
   (color-theme-tomorrow))
 
-(init-standard-color-theme 'color-theme-charcoal-black)
+;(init-standard-color-theme 'color-theme-charcoal-black)
+(init-zenburn-theme)
