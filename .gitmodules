@@ -25,3 +25,6 @@
 [submodule "third-party/github/color-theme-tomorrow"]
 	path = third-party/github/color-theme-tomorrow
 	url = https://github.com/chriskempson/tomorrow-theme.git
+[submodule "third-party/github/magit"]
+	path = third-party/github/magit
+	url = git://github.com/magit/magit.git
