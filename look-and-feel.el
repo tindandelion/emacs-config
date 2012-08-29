@@ -33,4 +33,4 @@
 (autopair-global-mode)
 
 ;; Global shortcuts
-(global-set-key [M-delete] 'undo)
+(global-set-key [M-backspace] 'undo)
