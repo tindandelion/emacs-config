@@ -45,6 +45,7 @@
 (load-library "expand-region-init")
 (load-library "markdown-init")
 (load-library "coffee-mode-init")
+(load-library "ack-init")
 ;; Platform-dependent 
 (setq os-init-file 
       (cond ((eq window-system 'mac) "carbon-mac-init")

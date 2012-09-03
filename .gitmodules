@@ -28,3 +28,6 @@
 [submodule "third-party/github/magit"]
 	path = third-party/github/magit
 	url = git://github.com/magit/magit.git
+[submodule "third-party/github/full-ack"]
+	path = third-party/github/full-ack
+	url = git://github.com/nschum/full-ack.git
