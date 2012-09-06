@@ -12,4 +12,4 @@
     (package-refresh-contents)
     (package-install package)))
 
-(load-theme 'zenburn t)
+
