@@ -9,14 +9,25 @@
     (package-refresh-contents)
     (package-install package)))
 
+(defmacro required-package (name &rest exprs)
+  `(progn
+     (ensure-package-installed ,name)
+     ,@exprs))
+
 (setup-package-system)
 
-(ensure-package-installed 'zenburn-theme)
-(load-theme 'zenburn t)
+(required-package 'zenburn-theme
+		  (load-theme 'zenburn t))
 
-(ensure-package-installed 'magit)
-(global-set-key "\C-xg" 'magit-status)
+(required-package 'magit
+		  (global-set-key "\C-xg" 'magit-status))
 
-(ensure-package-installed 'expand-region)
-(global-set-key "\M-=" 'er/expand-region)
+(required-package 'expand-region
+		  (global-set-key "\M-=" 'er/expand-region))
 
+(required-package 'rvm)
+
+(required-package 'smex
+		  (smex-initialize)
+		  (global-set-key "\M-x" 'smex)
+		  (global-set-key (kbd "M-X") 'smex-major-mode-commands))
