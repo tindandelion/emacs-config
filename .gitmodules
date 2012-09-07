@@ -1,6 +1,3 @@
-[submodule "third-party/github/zenburn"]
-	path = third-party/github/zenburn
-	url = git://github.com/bbatsov/zenburn-emacs.git
 [submodule "third-party/github/rvm"]
 	path = third-party/github/rvm
 	url = https://github.com/senny/rvm.el.git
@@ -28,6 +25,3 @@
 [submodule "third-party/github/full-ack"]
 	path = third-party/github/full-ack
 	url = git://github.com/nschum/full-ack.git
-[submodule "third-party/github/magit"]
-	path = third-party/github/magit
-	url = git://github.com/magit/magit.git
