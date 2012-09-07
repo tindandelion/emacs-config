@@ -16,3 +16,7 @@
 
 (ensure-package-installed 'magit)
 (global-set-key "\C-xg" 'magit-status)
+
+(ensure-package-installed 'expand-region)
+(global-set-key "\M-=" 'er/expand-region)
+
