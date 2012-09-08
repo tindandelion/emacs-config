@@ -33,6 +33,11 @@
   (setq show-paren-delay 0)
   (set-face-attribute 'show-paren-match-face nil :inverse-video nil :weight 'bold))
 
+(defun turn-on-volatile-highlights ()
+  (use-elpa-package 'volatile-highlights
+		    (require 'volatile-highlights)
+		    (volatile-highlights-mode +1)))
+
 (setup-decorations)
 (setup-color-theme)
 (setup-editor)
@@ -40,3 +45,4 @@
 (turn-on-ido)
 (turn-on-windmove)
 (turn-on-paren-mode)
+(turn-on-volatile-highlights)
