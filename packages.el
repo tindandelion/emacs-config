@@ -9,25 +9,26 @@
     (package-refresh-contents)
     (package-install package)))
 
-(defmacro required-package (name &rest exprs)
+(defmacro use-elpa-package (name &rest body)
   `(progn
      (ensure-package-installed ,name)
-     ,@exprs))
+     ,@body))
 
 (setup-package-system)
 
-(required-package 'zenburn-theme
-		  (load-theme 'zenburn t))
-
-(required-package 'magit
+(use-elpa-package 'magit
 		  (global-set-key "\C-xg" 'magit-status))
 
-(required-package 'expand-region
+(use-elpa-package 'expand-region
 		  (global-set-key "\M-=" 'er/expand-region))
 
-(required-package 'rvm)
+(use-elpa-package 'rvm)
 
-(required-package 'smex
+(use-elpa-package 'smex
 		  (smex-initialize)
 		  (global-set-key "\M-x" 'smex)
 		  (global-set-key (kbd "M-X") 'smex-major-mode-commands))
+ 
+(use-elpa-package 'full-ack
+		  (global-set-key (kbd "C-c a") 'ack-same)
+		  (global-set-key (kbd "C-c A") 'ack))

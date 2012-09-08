@@ -11,6 +11,16 @@
   (electric-indent-mode +1)
   (prefer-coding-system 'utf-8))
 
+(defun setup-color-theme ()
+  ;; (use-elpa-package 'solarized-theme
+  ;; 		    (load-theme 'solarized-light t)))
+  (use-elpa-package 'zenburn-theme
+		    (load-theme 'zenburn t)))
+
+(defun install-keybindings ()
+  (global-set-key (kbd "M-DEL") 'undo)
+  (global-set-key (kbd "C-/") 'dabbrev-expand))
+
 (defun turn-on-ido ()
   (require 'ido)
   (ido-mode t))
@@ -20,7 +30,9 @@
   (windmove-default-keybindings))
 
 (setup-decorations)
+(setup-color-theme)
 (setup-editor)
+(install-keybindings)
 (turn-on-ido)
 (turn-on-windmove)
 

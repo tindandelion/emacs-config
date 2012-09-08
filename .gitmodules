@@ -7,12 +7,3 @@
 [submodule "third-party/github/coffee-mode"]
 	path = third-party/github/coffee-mode
 	url = git://github.com/defunkt/coffee-mode.git
-[submodule "third-party/github/color-theme-solarized"]
-	path = third-party/github/color-theme-solarized
-	url = https://github.com/sellout/emacs-color-theme-solarized.git
-[submodule "third-party/github/color-theme-tomorrow"]
-	path = third-party/github/color-theme-tomorrow
-	url = https://github.com/chriskempson/tomorrow-theme.git
-[submodule "third-party/github/full-ack"]
-	path = third-party/github/full-ack
-	url = git://github.com/nschum/full-ack.git
