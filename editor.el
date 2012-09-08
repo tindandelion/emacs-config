@@ -12,10 +12,8 @@
   (prefer-coding-system 'utf-8))
 
 (defun setup-color-theme ()
-  ;; (use-elpa-package 'solarized-theme
-  ;; 		    (load-theme 'solarized-light t)))
-  (use-elpa-package 'zenburn-theme
-		    (load-theme 'zenburn t)))
+  (use-elpa-package 'solarized-theme
+  		    (load-theme 'solarized-light t)))
 
 (defun install-keybindings ()
   (global-set-key (kbd "M-DEL") 'undo)
@@ -29,10 +27,16 @@
   (require 'windmove)
   (windmove-default-keybindings))
 
+(defun turn-on-paren-mode ()
+  (show-paren-mode +1)
+  (setq show-paren-delay 0)
+  (set-face-attribute 'show-paren-match-face nil :inverse-video nil :weight 'bold))
+
 (setup-decorations)
 (setup-color-theme)
 (setup-editor)
 (install-keybindings)
 (turn-on-ido)
 (turn-on-windmove)
+(turn-on-paren-mode)
 
