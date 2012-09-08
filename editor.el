@@ -2,7 +2,8 @@
   (setq inhibit-splash-screen t)
   (menu-bar-mode -1)
   (tool-bar-mode -1)
-  (scroll-bar-mode -1))
+  (scroll-bar-mode -1)
+  (setq ring-bell-function 'ignore))
 
 (defun setup-editor ()
   (setq backup-inhibited t)
@@ -39,4 +40,3 @@
 (turn-on-ido)
 (turn-on-windmove)
 (turn-on-paren-mode)
-
