@@ -21,6 +21,7 @@
   (global-set-key (kbd "C-x g") 'magit-status))
 
 (use-elpa-package 'expand-region
+  (require 'expand-region)
   (global-set-key (kbd "C-=") 'er/expand-region))
 
 (use-elpa-package 'rvm)
