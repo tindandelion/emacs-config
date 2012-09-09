@@ -18,16 +18,16 @@
 (setup-package-system)
 
 (use-elpa-package 'magit
-  (global-set-key "\C-xg" 'magit-status))
+  (global-set-key (kbd "C-x g") 'magit-status))
 
 (use-elpa-package 'expand-region
-  (global-set-key "\M-=" 'er/expand-region))
+  (global-set-key (kbd "C-=") 'er/expand-region))
 
 (use-elpa-package 'rvm)
 
 (use-elpa-package 'smex
   (smex-initialize)
-  (global-set-key "\M-x" 'smex)
+  (global-set-key (kbd "M-x") 'smex)
   (global-set-key (kbd "M-X") 'smex-major-mode-commands))
 
 (use-elpa-package 'full-ack
