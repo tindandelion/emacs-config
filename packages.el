@@ -24,8 +24,6 @@
   (require 'expand-region)
   (global-set-key (kbd "C-=") 'er/expand-region))
 
-(use-elpa-package 'rvm)
-
 (use-elpa-package 'smex
   (smex-initialize)
   (global-set-key (kbd "M-x") 'smex)
