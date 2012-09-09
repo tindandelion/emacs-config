@@ -8,10 +8,13 @@
 	       (setq fill-column 80)
 	       (turn-on-auto-fill))))
 
+(defun assoc-with-mode (mode regex-list)
+  (dolist (regex regex-list)
+    (add-to-list 'auto-mode-alist (cons regex mode))))
+
 (setup-mode 'markdown-mode
   (use-elpa-package 'markdown-mode
-    (add-to-list 'auto-mode-alist '("\\.markdown" . markdown-mode))
-    (add-to-list 'auto-mode-alist '("\\.md" . markdown-mode))))
+    (assoc-with-mode 'markdown-mode '("\\.markdown" "\\.md"))))
 
 (setup-mode 'ruby-mode
   (use-elpa-package 'ruby-mode)
