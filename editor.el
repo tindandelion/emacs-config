@@ -9,6 +9,7 @@
 (defun setup-editor ()
   (setq backup-inhibited t)
   (setq auto-save-default nil)
+  (global-auto-revert-mode +1)
   (electric-pair-mode +1)
   (electric-indent-mode +1)
   (prefer-coding-system 'utf-8))
