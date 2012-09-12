@@ -25,3 +25,8 @@
 	       (add-to-list (make-local-variable 'electric-pair-pairs)
 			    '(?| . ?|))))
   (assoc-with-mode 'ruby-mode '("Rakefile" "Gemfile")))
+
+(setup-mode 'dired
+  (setq dired-recursive-copies 'top)
+  (setq dired-recursive-deletes 'top)
+  (setq dired-dwim-target t))
