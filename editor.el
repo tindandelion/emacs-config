@@ -20,7 +20,8 @@
 
 (defun install-keybindings ()
   (global-set-key (kbd "M-DEL") 'undo)
-  (global-set-key (kbd "C-/") 'dabbrev-expand))
+  (global-set-key (kbd "M-/") 'hippie-expand))
+  (global-set-key (kbd "C-/") 'hippie-expand))
 
 (defun turn-on-ido ()
   (require 'ido)
