@@ -23,4 +23,5 @@
 	       (use-elpa-package 'rvm)
 	       (rvm-activate-corresponding-ruby)
 	       (add-to-list (make-local-variable 'electric-pair-pairs)
-			    '(?| . ?|)))))
+			    '(?| . ?|))))
+  (assoc-with-mode 'ruby-mode '("Rakefile" "Gemfile")))
