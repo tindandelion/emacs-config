@@ -1,2 +1,7 @@
 auto-save-list
+elpa
 *.pyc
+/bookmarks
+/.smex-items
+/places
+/url/cookies
