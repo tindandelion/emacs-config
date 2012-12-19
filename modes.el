@@ -24,7 +24,7 @@
 	       (rvm-activate-corresponding-ruby)
 	       (add-to-list (make-local-variable 'electric-pair-pairs)
 			    '(?| . ?|))))
-  (assoc-with-mode 'ruby-mode '("Rakefile" "Gemfile")))
+  (assoc-with-mode 'ruby-mode '("Rakefile" "Gemfile" "Vagrantfile")))
 
 (setup-mode 'dired
   (setq dired-recursive-copies 'top)
