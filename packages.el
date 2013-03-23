@@ -33,6 +33,3 @@
   (global-set-key (kbd "C-c a") 'ack-same)
   (global-set-key (kbd "C-c A") 'ack))
 
-(use-elpa-package 'rainbow-delimiters)
-(use-elpa-package 'clojure-mode)
-

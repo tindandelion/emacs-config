@@ -32,4 +32,6 @@
   (setq dired-dwim-target t))
 
 (setup-mode 'clojure-mode
+  (use-elpa-package 'clojure-mode)
+  (use-elpa-package 'rainbow-delimiters)
   (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode))
