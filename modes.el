@@ -30,3 +30,6 @@
   (setq dired-recursive-copies 'top)
   (setq dired-recursive-deletes 'top)
   (setq dired-dwim-target t))
+
+(setup-mode 'clojure-mode
+  (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode))
