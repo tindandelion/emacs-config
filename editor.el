@@ -16,12 +16,23 @@
 
 (defun setup-color-theme ()
   (use-elpa-package 'solarized-theme
-  		    (load-theme 'solarized-light t)))
+    (load-theme 'solarized-light t)))
+
+(defun setup-recentf ()
+  (require 'recentf)
+  (defun recentf-ido-find-file ()
+    (interactive)
+    (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
+      (when file
+	(find-file file))))
+  (recentf-mode))
 
 (defun install-keybindings ()
+  (global-unset-key (kbd "C-z"))
   (global-set-key (kbd "M-DEL") 'undo)
   (global-set-key (kbd "M-/") 'hippie-expand)
-  (global-set-key (kbd "C-/") 'hippie-expand))
+  (global-set-key (kbd "C-/") 'hippie-expand)
+  (global-set-key (kbd "C-x C-r") 'recentf-ido-find-file))
 
 (defun turn-on-ido ()
   (require 'ido)
@@ -44,6 +55,7 @@
 (setup-decorations)
 (setup-color-theme)
 (setup-editor)
+(setup-recentf)
 (install-keybindings)
 (turn-on-ido)
 (turn-on-windmove)
