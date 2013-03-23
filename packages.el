@@ -32,3 +32,5 @@
 (use-elpa-package 'full-ack
   (global-set-key (kbd "C-c a") 'ack-same)
   (global-set-key (kbd "C-c A") 'ack))
+
+(use-elpa-package 'clojure-mode)
