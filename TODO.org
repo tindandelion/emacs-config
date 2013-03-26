@@ -1,0 +1,2 @@
+* TODO Create a shortcut to clear shell buffer
+  
