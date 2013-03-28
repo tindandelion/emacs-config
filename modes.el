@@ -40,3 +40,8 @@
   (setq org-todo-keywords '((sequence "TODO" "STARTED" "DONE")))
   (setq org-todo-keyword-faces '(("STARTED" . org-warning))))
 
+(setup-mode 'shell-mode
+  (defun shell-mode-keys ()
+    (local-set-key (kbd "C-l") 'erase-buffer))
+  
+  (add-hook 'shell-mode-hook 'shell-mode-keys))
