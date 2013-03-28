@@ -30,6 +30,8 @@
   (global-set-key (kbd "M-X") 'smex-major-mode-commands))
 
 (use-elpa-package 'full-ack
+  (setq ack-project-root-file-patterns
+	'("\\`.git\\'" "\\`.hg\\'" "Gemfile$"))
   (global-set-key (kbd "C-c a") 'ack-same)
   (global-set-key (kbd "C-c A") 'ack))
 
