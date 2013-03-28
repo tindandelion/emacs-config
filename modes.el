@@ -35,3 +35,8 @@
   (use-elpa-package 'clojure-mode)
   (use-elpa-package 'rainbow-delimiters)
   (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode))
+
+(setup-mode 'org-mode
+  (setq org-todo-keywords '((sequence "TODO" "STARTED" "DONE")))
+  (setq org-todo-keyword-faces '(("STARTED" . org-warning))))
+
