@@ -1,7 +1,7 @@
 * DONE Create a shortcut to clear shell buffer
   - Note taken on [2013-03-28 Thu 08:24] \\
     Bound to C-l
-* TODO Indent after yank
+* DONE Indent after yank
 * TODO Overwrite selection
 * TODO Navigate to words M-f "the conventional way"
   
