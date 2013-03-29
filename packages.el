@@ -34,4 +34,3 @@
 	'("\\`.git\\'" "\\`.hg\\'" "Gemfile$"))
   (global-set-key (kbd "C-c a") 'ack-same)
   (global-set-key (kbd "C-c A") 'ack))
-

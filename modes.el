@@ -45,3 +45,8 @@
     (local-set-key (kbd "C-l") 'erase-buffer))
   
   (add-hook 'shell-mode-hook 'shell-mode-keys))
+
+(setup-mode 'auto-indent-mode
+  (use-elpa-package 'auto-indent-mode)
+  (auto-indent-global-mode))
+
