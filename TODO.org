@@ -3,5 +3,5 @@
     Bound to C-l
 * DONE Indent after yank
 * DONE Overwrite selection
-* TODO Navigate to words M-f "the conventional way"
+* TODO Navigate to words M-f "the conventional way" [[http://stackoverflow.com/questions/3931837/modifying-emacs-forward-word-backward-ward-behavior-to-be-like-in-vi-vim][link]]
   
