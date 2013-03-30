@@ -37,8 +37,19 @@
   (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode))
 
 (setup-mode 'org-mode
+  (defun org-mode-keys ()
+    (local-unset-key (kbd "S-<up>"))
+    (local-unset-key (kbd "S-<down>")))
+  
   (setq org-todo-keywords '((sequence "TODO" "STARTED" "DONE")))
-  (setq org-todo-keyword-faces '(("STARTED" . org-warning))))
+  (setq org-todo-keyword-faces '(("STARTED" . org-warning)))
+  (setq org-agenda-files (concat user-emacs-directory "org-projects"))
+  
+  (add-hook 'org-mode-hook 'org-mode-keys)
+  (add-hook 'org-agenda-mode-hook 'org-mode-keys)
+
+  (global-set-key (kbd "ESC M-a")
+		  (lambda () (interactive) (org-agenda-list 0))))
 
 (setup-mode 'shell-mode
   (defun shell-mode-keys ()
@@ -49,6 +60,3 @@
 (setup-mode 'auto-indent-mode
   (use-elpa-package 'auto-indent-mode)
   (auto-indent-global-mode))
-
-(setup-mode 'org-mode
-  (setq org-agenda-files (concat user-emacs-directory "org-projects")))
