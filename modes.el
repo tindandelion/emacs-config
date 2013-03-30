@@ -50,3 +50,5 @@
   (use-elpa-package 'auto-indent-mode)
   (auto-indent-global-mode))
 
+(setup-mode 'org-mode
+  (setq org-agenda-files (concat user-emacs-directory "org-projects")))
