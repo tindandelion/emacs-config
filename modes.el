@@ -47,7 +47,7 @@
   
   (add-hook 'org-mode-hook 'org-mode-keys)
   (add-hook 'org-agenda-mode-hook 'org-mode-keys)
-
+  
   (global-set-key (kbd "ESC M-a")
 		  (lambda () (interactive) (org-agenda-list 0))))
 
@@ -60,3 +60,12 @@
 (setup-mode 'auto-indent-mode
   (use-elpa-package 'auto-indent-mode)
   (auto-indent-global-mode))
+
+(setup-mode 'rspec-mode
+  (defun rspec-mode-keys ()
+    (local-set-key (kbd "M-S-<f10>") 'rspec-verify))
+  
+  (use-elpa-package 'rspec-mode)
+  (setq rspec-use-bundler-when-possible nil)
+  (setq rspec-use-rake-flag nil)
+  (add-hook 'rspec-mode-hook 'rspec-mode-keys))
