@@ -55,6 +55,10 @@
 		    (require 'volatile-highlights)
 		    (volatile-highlights-mode +1)))
 
+(defun uniquify-buffer-names ()
+  (require 'uniquify)
+  (setq uniquify-buffer-name-style 'forward))
+
 (setup-decorations)
 (setup-color-theme)
 (setup-editor)
@@ -64,3 +68,4 @@
 (turn-on-windmove)
 (turn-on-paren-mode)
 (turn-on-volatile-highlights)
+(uniquify-buffer-names)
