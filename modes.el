@@ -44,6 +44,11 @@
   (setq org-todo-keywords '((sequence "TODO" "STARTED" "DONE")))
   (setq org-todo-keyword-faces '(("STARTED" . org-warning)))
   (setq org-agenda-files (concat user-emacs-directory "org-projects"))
+  (setq org-agenda-sorting-strategy
+	'((agenda todo-state-down priority-down category-keep)
+	  (todo priority-down category-keep)
+	  (tags priority-down category-keep)
+	  (search category-keep)))
   
   (add-hook 'org-mode-hook 'org-mode-keys)
   (add-hook 'org-agenda-mode-hook 'org-mode-keys)

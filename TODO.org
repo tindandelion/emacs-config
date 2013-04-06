@@ -1,8 +1,9 @@
-#+CATEGORY: Emacs
+#+CATEGORY: emacs
 
 * TODO rspec-mode: Toggle between code and spec
 SCHEDULED: <2013-04-07 Sun>
-* TODO Org-mode agenda: move DONE items to the bottom
+* DONE Org-mode agenda: move DONE items to the bottom
+SCHEDULED: <2013-04-06 Sat>
 * TODO Navigate to words M-f "the conventional way" [[http://stackoverflow.com/questions/3931837/modifying-emacs-forward-word-backward-ward-behavior-to-be-like-in-vi-vim][link]]
 * TODO Auto-save buffers 
 * DONE Create a shortcut to clear shell buffer
