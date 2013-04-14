@@ -3,10 +3,10 @@
 * DONE Uniquify buffer names
 SCHEDULED: <2013-04-07 Sun>
 * TODO Auto-save buffers 
-SCHEDULED: <2013-04-07 Sun>
+SCHEDULED: <2013-04-15 Mon>
 * TODO Org-mode: put notes into a separate drawer
 * TODO rspec-mode: Toggle between code and spec
-SCHEDULED: <2013-04-07 Sun>
+SCHEDULED: <2013-04-15 Mon>
 * TODO Navigate to words M-f "the conventional way" [[http://stackoverflow.com/questions/3931837/modifying-emacs-forward-word-backward-ward-behavior-to-be-like-in-vi-vim][link]]
 * DONE Org-mode agenda: move DONE items to the bottom
 SCHEDULED: <2013-04-06 Sat>
