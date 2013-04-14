@@ -35,7 +35,10 @@
   (global-set-key (kbd "M-DEL") 'undo)
   (global-set-key (kbd "M-/") 'hippie-expand)
   (global-set-key (kbd "C-/") 'hippie-expand)
-  (global-set-key (kbd "C-x C-r") 'recentf-ido-find-file))
+  (global-set-key (kbd "C-x C-r") 'recentf-ido-find-file)
+  
+  (global-set-key (kbd "<s-right>") 'move-end-of-line)
+  (global-set-key (kbd "<s-left>") 'move-beginning-of-line))
 
 (defun turn-on-ido ()
   (require 'ido)
