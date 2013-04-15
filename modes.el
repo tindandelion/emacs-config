@@ -71,6 +71,7 @@
     (local-set-key (kbd "M-S-<f10>") 'rspec-verify))
   
   (use-elpa-package 'rspec-mode)
+  (defalias 'first 'car)
   (setq rspec-use-bundler-when-possible nil)
   (setq rspec-use-rake-flag nil)
   (add-hook 'rspec-mode-hook 'rspec-mode-keys))
