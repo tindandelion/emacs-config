@@ -1,14 +1,19 @@
 #+CATEGORY: emacs
 
-* DONE Uniquify buffer names
-SCHEDULED: <2013-04-07 Sun>
-* DONE Auto-save buffers 
-SCHEDULED: <2013-04-15 Mon>
-* TODO Org-mode: put notes into a separate drawer
-* TODO rspec-mode: Toggle between code and spec
-SCHEDULED: <2013-04-14 Sun>
 * TODO rspec-mode: Search for spec - lib file with more flexibility
 * TODO Navigate to words M-f "the conventional way" [[http://stackoverflow.com/questions/3931837/modifying-emacs-forward-word-backward-ward-behavior-to-be-like-in-vi-vim][link]]
+* TODO Auto-save buffers 
+SCHEDULED: <2013-04-18 Thu>
+* DONE Uniquify buffer names
+SCHEDULED: <2013-04-07 Sun>
+* DONE Org-mode: put notes into a separate drawer
+SCHEDULED: <2013-04-14 Sun>
+:LOGBOOK:
+- Note taken on [2013-04-15 Mon 14:21] \\
+  Test note
+:END:
+* DONE rspec-mode: Toggle between code and spec
+SCHEDULED: <2013-04-14 Sun>
 * DONE Org-mode agenda: move DONE items to the bottom
 SCHEDULED: <2013-04-06 Sat>
 * DONE Create a shortcut to clear shell buffer

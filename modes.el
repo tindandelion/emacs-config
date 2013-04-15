@@ -42,6 +42,7 @@
     (local-unset-key (kbd "S-<down>")))
   
   (setq org-todo-keywords '((sequence "TODO" "STARTED" "DONE")))
+  (setq org-log-into-drawer t)
   (setq org-todo-keyword-faces '(("STARTED" . org-warning)))
   (setq org-agenda-files (concat user-emacs-directory "org-projects"))
   (setq org-agenda-sorting-strategy
