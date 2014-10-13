@@ -78,3 +78,5 @@
   (setq rspec-use-bundler-when-possible nil)
   (setq rspec-use-rake-flag nil)
   (add-hook 'rspec-mode-hook 'rspec-mode-keys))
+
+(assoc-with-mode 'octave-mode '("\\.m"))
