@@ -39,7 +39,9 @@
 (setup-mode 'org-mode
   (defun org-mode-keys ()
     (local-unset-key (kbd "S-<up>"))
-    (local-unset-key (kbd "S-<down>")))
+    (local-unset-key (kbd "S-<down>"))
+    (local-unset-key (kbd "S-<left>"))
+    (local-unset-key (kbd "S-<right>")))
   
   (setq org-todo-keywords '((sequence "TODO" "STARTED" "DONE")))
   (setq org-log-into-drawer t)
