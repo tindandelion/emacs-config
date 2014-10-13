@@ -12,6 +12,9 @@
   (dolist (regex regex-list)
     (add-to-list 'auto-mode-alist (cons regex mode))))
 
+(setup-mode 'sml-mode
+  (use-elpa-package 'sml-mode))
+
 (setup-mode 'markdown-mode
   (use-elpa-package 'markdown-mode
     (assoc-with-mode 'markdown-mode '("\\.markdown" "\\.md"))))
