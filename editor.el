@@ -15,7 +15,11 @@
   (global-auto-revert-mode +1)
   (electric-pair-mode +1)
   (electric-indent-mode +1)
-  (prefer-coding-system 'utf-8))
+  (prefer-coding-system 'utf-8)
+  (setup-default-directory))
+
+(defun setup-default-directory ()
+  (setq default-directory (concat (getenv "HOME") "/")))
 
 (defun setup-color-theme ()
   (use-elpa-package 'solarized-theme
