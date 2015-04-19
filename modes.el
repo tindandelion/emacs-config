@@ -82,4 +82,4 @@
   (setq rspec-use-rake-flag nil)
   (add-hook 'rspec-mode-hook 'rspec-mode-keys))
 
-(assoc-with-mode 'octave-mode '("\\.m"))
+(assoc-with-mode 'octave-mode '("\\.m$"))
