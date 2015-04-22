@@ -68,9 +68,10 @@
   
   (add-hook 'shell-mode-hook 'shell-mode-keys))
 
+
 (setup-mode 'auto-indent-mode
-  (use-elpa-package 'auto-indent-mode)
-  (auto-indent-global-mode))
+  (use-elpa-package 'auto-indent-mode))
+
 
 (setup-mode 'rspec-mode
   (defun rspec-mode-keys ()
