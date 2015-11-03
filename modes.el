@@ -19,6 +19,10 @@
   (use-elpa-package 'markdown-mode
     (assoc-with-mode 'markdown-mode '("\\.markdown" "\\.md"))))
 
+(setup-mode 'groovy-mode
+  (use-elpa-package 'groovy-mode
+    (assoc-with-mode 'groovy-mode '("\\.gradle$" "\\.groovy$"))))
+
 (setup-mode 'ruby-mode
   (use-elpa-package 'ruby-mode)
   (add-hook 'ruby-mode-hook
