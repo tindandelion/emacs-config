@@ -29,8 +29,12 @@
   (global-set-key (kbd "M-x") 'smex)
   (global-set-key (kbd "M-X") 'smex-major-mode-commands))
 
-(use-elpa-package 'full-ack
-  (setq ack-project-root-file-patterns
-	'("\\`.git\\'" "\\`.hg\\'" "Gemfile$"))
-  (global-set-key (kbd "C-c a") 'ack-same)
-  (global-set-key (kbd "C-c A") 'ack))
+(use-elpa-package 'ack
+  (global-set-key (kbd "M-<f7>") 'ack))
+
+(use-elpa-package 'exec-path-from-shell)
+;; (use-elpa-package 'full-ack
+;;   (setq ack-project-root-file-patterns
+;; 	'("\\`.git\\'" "\\`.hg\\'" "Gemfile$"))
+;;   (global-set-key (kbd "C-c a") 'ack-same)
+;;   (global-set-key (kbd "C-c A") 'ack))
