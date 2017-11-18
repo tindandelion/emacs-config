@@ -42,7 +42,8 @@
   (global-set-key (kbd "C-x C-r") 'recentf-ido-find-file)
   
   (global-set-key (kbd "<s-right>") 'move-end-of-line)
-  (global-set-key (kbd "<s-left>") 'move-beginning-of-line))
+  (global-set-key (kbd "<s-left>") 'move-beginning-of-line)
+  (global-set-key (kbd "s-.") 'ff-find-other-file))
 
 (defun turn-on-ido ()
   (require 'ido)
